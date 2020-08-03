@@ -116,13 +116,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - react-router-dom `npm i react-router-dom`
     - react-scripts `npm i react-scripts`
 
-- 
 - Other npm installations:
     - graphql-tag 
     - Apollo-Client 
     - apollo-boost
     - React Router
-    - react-router-dom 
     - apollo/react-hooks 
     - if-env `npm i if-env`
     - concurrently `concurrently`
@@ -135,16 +133,16 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 ### Website
 - The website has been deployed to Heroku before and after the refactor exercise, before and after utilizing GraphQL\Apollo.
 
-- Before refactor as REST API
-    https://ktrnthsnr-book-search-restapi.herokuapp.com/ 
+    - Before refactor as REST API
+        https://ktrnthsnr-book-search-restapi.herokuapp.com/ 
 
-- After refactor as GraphQL API 
-    https://ktrnthsnr-book-search-graphqlapi.herokuapp.com/ 
+    - After refactor as GraphQL API 
+        https://ktrnthsnr-book-search-graphqlapi.herokuapp.com/ 
 	
 - The development server can be reached through 
     - $ `cd client`
     - $ `npm start`
-- The browser will open to your localhost `http://localhost:3001`
+- The browser will open to your localhost `http://localhost:3000`
 - Here is a search sample from the dev server, 
 	![Book Search Engine](./searchSample.jpg "Book Search Engine")
 
