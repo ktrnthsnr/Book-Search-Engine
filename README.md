@@ -184,6 +184,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 See Usage > server-side.
 
+The Chrome DevTools can validate API connections. Here a right click on the page opens DevTools showing the mobile-first single-page appication design and request\response to the GoogleAPI, as follows,
+
+![Book Search googapi](./googleAPIreact.jpg "Book Search googapi")
+
+
 ## Contribution
 
 ktrnthsnr
