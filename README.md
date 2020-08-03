@@ -9,6 +9,8 @@ https://github.com/ktrnthsnr/Book-Search-Engine
 ## Heroku deployed website
 
 
+
+
 ## Table of Contents
 
 * [Description](#description)
@@ -21,18 +23,13 @@ https://github.com/ktrnthsnr/Book-Search-Engine
 
 ## Description
 
+The task for this repo will be to refactor the code from one set of libraries to a different set.
+
+- Original: the original application was built with a RESTful API, with a React front-end and MongoDB, Node.js/Express.js server and API.
+
+- New: the refactored application will use GraphQL API built with Apollo Server.
+
 This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server.
-
-* QueryQL application brief intro 
-    * The search engine contains these models:
-
-    * The development server will use Mongoose for all its MongoDB data handling, which run through the server/config/connection.js, and is exported through mongoose.connection.
-    * The connection is imported by the server/server.js.    
-    * Seeder dummy data can be generated via the server/seeders/seeds.js file by the Faker.js library.
-    * To access the GraphQL API, schemas were created. Located under server/schemas, this location contains the type definitions (queries) and resolvers (response) which the QueryQl API accesses to perform the CRUD (create, read, update, delete) operations.
-    * The Apollo server is connected to the Express.js server, as defined in the server/server.js.
-    * QueryQL queries can be run in the QueryQL Playground. See the `Usage` section below for more info on starting the nodemon server, quering the db, and viewing the results in the localhost.
-
 
 ## Technology
 
@@ -41,69 +38,140 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 ## Installations for this MERN application
 
 - Prereq: install VSCode, Node.js, and MongoDB
-
 - After cloning the GitHub repo to your local drive, run the following in the VSCode command-line terminal
 - Install all components listed within the package.json file for npm
-    - $ `npm i`
+    - Server 
+    - $ `cd server`
+    - $ `npm i`
+     - Client
+    - $ `cd client`
+    - $ `npm i`
 
-- Otherwise, for custom individual component installations, start by initializing npm and creating a new package.json
-    - $ `npm init --y` or $ `npm install`
-    - Create a .gitignore file in the root and add `node_modules` to this file
-    - If you need to re-add any of the dependencies, run $ `npm install`
+- Otherwise, for custom individual component installations, install the npm packages per each server and client:
 
-- Npm packages installed:
+### Server-side installations
+- original `server` dependencies before refactor to QueryQL and Apollo server
+        ```
+        "dependencies": {
+            "bcrypt": "^4.0.1",
+            "express": "^4.17.1",
+            "faker": "^4.1.0",
+            "jsonwebtoken": "^8.5.1",
+            "moment": "^2.24.0", 
+            "mongoose": "^5.9.9"
+        },
+        "devDependencies": {
+            "nodemon": "^2.0.3"
+        ```
 
-- Apollo Server library
-    - $ `npm i apollo-server-express`
+- Npm packages installed under the /server folder:
+    - Under the /server folder, create a .gitignore file in the root and add `node_modules` to this file
+    - Install these npm packages
+    - $ `cd server`
+    - brcrypt `npm install bcrypt`
+    - express.js `npm i express`
+    - faker `npm i faker`
+    - jsonwebtoken  `npm install jsonwebtoken`
+    - moment `npm install moment`
+    - mongoose `npm install mongoose`
+- Npm packages installed for the /server refactor include:
+    - Apollo Server library $ `npm i apollo-server-express`
+    - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package $ `npm install jsonwebtoken`
 
-- mongoose
-- graphql-tag 
+### Client-side installations
+- original `client` dependencies before refactor to QueryQL and Apollo server
+    ```
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "bootstrap": "^4.4.1",
+        "jwt-decode": "^2.2.0",
+        "react": "^16.13.1",
+        "react-bootstrap": "^1.0.1",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "3.4.1"
+        }
+    ```
+- Npm packages installed under the /client folder:
+     - Under the /client folder, create a .gitignore file in the root and add `node_modules` to this file
+     - Create the React App tool if cloned the repo, by running in the bash terminal
+        - $ `cd client`
+        - $ `npx create-react-app .` 
+        - (New installs without repo cloning, run $ `npx create-react-app client`)
+    - Install these these npm packages as well
+    - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
+    - bootstrap `npm i bootstrap`
+    - popper  `npm i popper.js`
+    - jQuery `npm i jquery`
+    - jwt-decode `npm i jwt-decode`
+    - react-bootstrap `npm i react-bootstrap`
+    - react-dom `npm i react-dom`
+    - react-router-dom `npm i react-router-dom`
+    - react-scripts `npm i react-scripts`
 
-- Apollo-Client 
-- apollo-server-express 
-- apollo-boost 
-- React Router 
-- react-router-dom 
-- apollo/react-hooks 
-- if-env 
-- concurrently 
-- jsonwebtoken 
-- jwt-decode 
-- faker 
-- nodemon
-- brcrypt
-- moment
+- 
+- Other npm installations:
+        - graphql-tag 
+        - Apollo-Client 
+        - apollo-boost
+        - React Router
+        - react-router-dom 
+        - apollo/react-hooks 
+        - if-env `npm i if-env`
+        - concurrently `concurrently`
+        - nodemon `npm i nodemon`
 
 
 ## Usage
 
+
 ### Website
-- The website for this website has been deployed to GitHub.
+- The website has been deployed to Heroku.
 	![insert](./insert.jpg "insert")
+- Development server can be reached through 
+    - $ `cd client`
+    - $ `npm start`
+- The browser will open to your localhost `http://localhost:3001`
+- Here is a search sample from the dev server, 
+	![Book Search Engine](./searchSample.jpg "Book Search Engine")
 
-### Local install and usage
-- To view the site locally, first install the npm packages
-- $ `npm i`
+### Local install, seed and usage 
+
+#### Server-side
+
+- To view the site locally on the development server, first install the npm packages
+    - $ `npm i` or `npm install`
 - Then seed the data
-- $ `npm run seed`
+    - $ `npm run seed`
 - Start the MongoDB
-- $ `mongod`
-- To test the Apollo server connecting to the Express.js, (to test the schemas and server.js), run the following 
-- $ `cd server`
-- $ `npm run watch`
-- This allows for file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
+    - $ `mongod`
+- To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
+    - $ `cd server`
+    - $ `npm run watch`
+- This allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
-- Sample queries can be copied from the GraphqlPlayground-queries.md. 
+- Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. <in work>
 
-- To start the application on localhost port 3001, run in the bash terminal
-- $ `npm start`
+- If npm run watch requires additional npm packages, hhere are the server side dependencies as seen under /server/package.json. Installations are listed above.
 
+
+#### Client-side
+- If cloning to your local drive, install the npm packages 
+    - $ `cd client`
+    - $ `npm i` or `npm install`
+- Then start up the app. The React app client starts up by running from the client directory
+    - $ `cd client`
+    - $ `npm start`
+- The default browser will open the development server to your localhost, at `http://localhost:3000/`
+
+- If npm start requires additional npm packages, the client side dependencies are located at /client/package.json. Installations are listed above.
 
 
 ## Testing
 
-
-
+See Usage > server-side.
 
 ## Contribution
 
