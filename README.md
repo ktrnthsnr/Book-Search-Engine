@@ -10,7 +10,6 @@ https://github.com/ktrnthsnr/Book-Search-Engine
 
 
 
-
 ## Table of Contents
 
 * [Description](#description)
@@ -25,9 +24,9 @@ https://github.com/ktrnthsnr/Book-Search-Engine
 
 The task for this repo will be to refactor the code from one set of libraries to a different set.
 
-- Original: the original application was built with a RESTful API, with a React front-end and MongoDB, Node.js/Express.js server and API.
+- Original: The original application was built using the MERN stack, with a RESTful API, with a React front-end and MongoDB, Node.js/Express.js server and API.
 
-- New: the refactored application will use GraphQL API built with Apollo Server.
+- New: The refactored application will use GraphQL API built with Apollo Server.
 
 This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server.
 
@@ -37,7 +36,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ## Installations for this MERN application
 
-- Prereq: install VSCode, Node.js, and MongoDB
+- Prereq: install to your desktop VSCode, Node.js, and MongoDB
 - After cloning the GitHub repo to your local drive, run the following in the VSCode command-line terminal
 - Install all components listed within the package.json file for npm
     - Server 
@@ -128,8 +127,13 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 
 ### Website
-- The website has been deployed to Heroku.
-	![insert](./insert.jpg "insert")
+- The website has been deployed to Heroku before and after the refactor exercise, before and after utilizing GraphQL\Apollo.
+
+    - Heroku before refactor
+        
+    - Heroku after the refactor
+	
+
 - Development server can be reached through 
     - $ `cd client`
     - $ `npm start`
@@ -137,10 +141,10 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Here is a search sample from the dev server, 
 	![Book Search Engine](./searchSample.jpg "Book Search Engine")
 
+
 ### Local install, seed and usage 
 
 #### Server-side
-
 - To view the site locally on the development server, first install the npm packages
     - $ `npm i` or `npm install`
 - Then seed the data
@@ -154,11 +158,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. <in work>
 
-- If npm run watch requires additional npm packages, hhere are the server side dependencies as seen under /server/package.json. Installations are listed above.
+- If npm run watch requires additional npm packages, the server side dependencies as listed under /server/package.json. See installations for more info.
 
 
 #### Client-side
-- If cloning to your local drive, install the npm packages 
+- Clone the repo to your local drive, install the npm packages to the /server folder first, then these to the /client folder
     - $ `cd client`
     - $ `npm i` or `npm install`
 - Then start up the app. The React app client starts up by running from the client directory
@@ -166,7 +170,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - $ `npm start`
 - The default browser will open the development server to your localhost, at `http://localhost:3000/`
 
-- If npm start requires additional npm packages, the client side dependencies are located at /client/package.json. Installations are listed above.
+- If npm start requires additional npm packages, the client side dependencies are located at /client/package.json. See installations for more info.
 
 
 ## Testing
