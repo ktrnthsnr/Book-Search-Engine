@@ -10,7 +10,7 @@ https://github.com/ktrnthsnr/Book-Search-Engine
 
 Before refactor as REST API
     https://ktrnthsnr-book-search-restapi.herokuapp.com/ 
-    
+
 After refactor as GraphQL API 
     https://ktrnthsnr-book-search-graphqlapi.herokuapp.com/ 
 
@@ -38,7 +38,7 @@ This project is focused on full-stack web development using MERN stack tools, la
 
 Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, GraphQL Playground, Apollo Server, Apollo-Client, graphql-tag, apollo-server-express, apollo-boost, React Router, react-router-dom, apollo/react-hooks, if-env, concurrently, jsonwebtoken, jwt-decode, faker, nodemon, bcrypt, moment
 
-## Installations for this MERN application
+## Installations
 
 - Prereq: install to your desktop VSCode, Node.js, and MongoDB
 - After cloning the GitHub repo to your local drive, run the following in the VSCode command-line terminal
@@ -53,19 +53,20 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Otherwise, for custom individual component installations, install the npm packages per each server and client:
 
 ### Server-side installations
-- original `server` dependencies before refactor to QueryQL and Apollo server
-        ```
-        "dependencies": {
-            "bcrypt": "^4.0.1",
-            "express": "^4.17.1",
-            "faker": "^4.1.0",
-            "jsonwebtoken": "^8.5.1",
-            "moment": "^2.24.0", 
-            "mongoose": "^5.9.9"
-        },
-        "devDependencies": {
-            "nodemon": "^2.0.3"
-        ```
+- Original `server` dependencies before refactor to QueryQL and Apollo server
+
+    ```
+    "dependencies": {
+        "bcrypt": "^4.0.1",
+        "express": "^4.17.1",
+        "faker": "^4.1.0",
+        "jsonwebtoken": "^8.5.1",
+        "moment": "^2.24.0", 
+        "mongoose": "^5.9.9"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    ```
 
 - Npm packages installed under the /server folder:
     - Under the /server folder, create a .gitignore file in the root and add `node_modules` to this file
@@ -82,7 +83,8 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package $ `npm install jsonwebtoken`
 
 ### Client-side installations
-- original `client` dependencies before refactor to QueryQL and Apollo server
+- Original `client` dependencies before refactor to QueryQL and Apollo server
+
     ```
     "dependencies": {
         "@testing-library/jest-dom": "^4.2.4",
@@ -116,15 +118,15 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 - 
 - Other npm installations:
-        - graphql-tag 
-        - Apollo-Client 
-        - apollo-boost
-        - React Router
-        - react-router-dom 
-        - apollo/react-hooks 
-        - if-env `npm i if-env`
-        - concurrently `concurrently`
-        - nodemon `npm i nodemon`
+    - graphql-tag 
+    - Apollo-Client 
+    - apollo-boost
+    - React Router
+    - react-router-dom 
+    - apollo/react-hooks 
+    - if-env `npm i if-env`
+    - concurrently `concurrently`
+    - nodemon `npm i nodemon`
 
 
 ## Usage
@@ -133,12 +135,13 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 ### Website
 - The website has been deployed to Heroku before and after the refactor exercise, before and after utilizing GraphQL\Apollo.
 
-    - Heroku before refactor
-        
-    - Heroku after the refactor
-	
+- Before refactor as REST API
+    https://ktrnthsnr-book-search-restapi.herokuapp.com/ 
 
-- Development server can be reached through 
+- After refactor as GraphQL API 
+    https://ktrnthsnr-book-search-graphqlapi.herokuapp.com/ 
+	
+- The development server can be reached through 
     - $ `cd client`
     - $ `npm start`
 - The browser will open to your localhost `http://localhost:3001`
