@@ -12,7 +12,7 @@ Before refactor as REST API
     https://ktrnthsnr-book-search-restapi.herokuapp.com/ 
 
 After refactor as GraphQL API 
-    https://ktrnthsnr-book-search-graphqlapi.herokuapp.com/ 
+    https://ktrnthsnr-book-search-graphql.herokuapp.com/
 
 ## Table of Contents
 
