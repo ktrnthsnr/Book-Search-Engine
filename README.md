@@ -151,6 +151,12 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - After refactor as GraphQL API 
         https://ktrnthsnr-book-search-graphqlapi.herokuapp.com/ 
 	
+- The webiste allows for Sign-Up and Login
+    ![Signup](./signup.jpg "Signup")
+
+- One signed up and logged in, a user may save their book list
+    ![Saved Books](./savedBooks.jpg "Saved Books")
+
 - The development server can be reached through 
     - $ `cd client`
     - $ `npm start`
