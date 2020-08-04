@@ -177,7 +177,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - The development server can be reached through 
     - $ `cd client`
     - $ `npm start`
-- The browser will open to your localhost `http://localhost:3000`
+- The browser will open to your localhost React environment `http://localhost:3000`
 - Here is a search sample from the dev server, 
 	![Book Search Engine](./searchSample.jpg "Book Search Engine")
 
@@ -195,7 +195,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - $ `cd server`
     - $ `npm run watch`
 - This allows for queries and any file changes without having to restart the server. The config is setup in the server/package.json to run nsodeman, "watch": "nodemon".
-- Use GraphQL Playground locally at `http://localhost:3001/graphql`
+- Use GraphQL Playground server environment, view locally at `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. <in work>
 
 - If npm run watch requires additional npm packages, the server side dependencies as listed under /server/package.json. See installations for more info.
