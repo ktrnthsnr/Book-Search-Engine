@@ -134,12 +134,13 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - For the refactor to GraphQL and Apollo server, these packages were installed
     - React Router `npm i react-router`
     - nodemon `npm i nodemon`
-    - Apollo-Client `npm i apollo client`
     - apollo/react-hooks `npm i @apollo/react-hooks`
-    - apollo-boost `npm i @pollo-boost`    
     - if-env `npm i if-env`
-    - concurrently `concurrently`
+    - concurrently `npm i concurrently`
     - graphql-tag `npm i graphql-tag`
+    - Apollo-Client `npm i apollo client` -- (todo: redo)
+    - apollo-boost `npm i @apollo-boost`   -- (todo: redo)
+
 
 - Files and folders created and updated for the client-side refactor: `Still in work!`
     - New folder: /client/*
@@ -177,14 +178,14 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 #### Server-side
 - To view the site locally on the development server, first install the npm packages
     - $ `npm i` or `npm install`
-- Then seed the data (not required if gathing data from a third party API, such as Google API)
+- Then seed the data (not required if gathing data from a third party API, such as Google API. Instead connect to the Google Books API)
     - $ `npm run seed`
-- Start the MongoDB (not required if gathing data from a third party API, such as Google API)
+- Start the MongoDB
     - $ `mongod`
 - To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
     - $ `cd server`
     - $ `npm run watch`
-- This allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
+- This allows for queries and any file changes without having to restart the server. The config is setup in the server/package.json to run nsodeman, "watch": "nodemon".
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. <in work>
 
