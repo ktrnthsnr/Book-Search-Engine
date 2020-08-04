@@ -121,7 +121,17 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
         - $ `cd client`
         - $ `npx create-react-app .` 
         - (New installs without repo cloning, run $ `npx create-react-app client`)
-    - Install additional dependent npm packages
+
+  - Install additional dependent npm packages
+	- apollo-boost `npm i apollo-boost graphql graphql-tag @apollo/react-hooks` 
+        - This installs these, so no need to install
+            - apollo-boost
+            - graphql-tag 
+            - graphql
+            - @apollo/apollo-hooks
+
+    - Apollo-Client `npm i apollo client` -- (todo: redo)
+
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
     - bootstrap `npm i bootstrap`
     - popper  `npm i popper.js`
@@ -131,18 +141,17 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - react-dom `npm i react-dom`
     - react-router-dom `npm i react-router-dom`
     - react-scripts `npm i react-scripts`
-- For the refactor to GraphQL and Apollo server, these packages were installed
+  - For the refactor to GraphQL and Apollo server, these packages were installed
     - React Router `npm i react-router`
     - nodemon `npm i nodemon`
     - apollo/react-hooks `npm i @apollo/react-hooks`
     - if-env `npm i if-env`
     - concurrently `npm i concurrently`
     - graphql-tag `npm i graphql-tag`
-    - Apollo-Client `npm i apollo client` -- (todo: redo)
-    - apollo-boost `npm i @apollo-boost`   -- (todo: redo)
 
 
-- Files and folders created and updated for the client-side refactor: `Still in work!`
+
+- Files and folders created and updated for the client-side refactor: ` ***** Still in work! *****`
     - New folder: /client/*
       - Files: queries.js, mutations.js, SearchBooks.js, SavedBooks.js
     - Updated files: /client/src/Apps.js

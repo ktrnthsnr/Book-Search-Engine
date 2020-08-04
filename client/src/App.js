@@ -4,6 +4,11 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
+// new -- create the Apollo Provider
+  // these two libraries will import statements
+  import { ApolloProvider } from '@apollo/react-hooks';
+  import ApolloClient from 'apollo-boost';
+
 function App() {
   return (
     <Router>
