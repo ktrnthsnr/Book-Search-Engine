@@ -131,21 +131,19 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - react-dom `npm i react-dom`
     - react-router-dom `npm i react-router-dom`
     - react-scripts `npm i react-scripts`
+        - React Router `npm i react-router`
+        - nodemon `npm i nodemon`
+        - Apollo-Client `npm i apollo client`
+        - apollo/react-hooks `npm i @apollo/react-hooks`
+        - apollo-boost `npm i @pollo-boost`    
+        - if-env `npm i if-env`
+        - concurrently `concurrently`
+        - graphql-tag `npm i graphql-tag`
 
-- Other npm installations:
-    - graphql-tag 
-    - Apollo-Client 
-    - apollo-boost
-    - React Router
-    - apollo/react-hooks 
-    - if-env `npm i if-env`
-    - concurrently `concurrently`
-    - nodemon `npm i nodemon`
-
-- Files and folders created and updated for the client-side refactor: 
-    - New folder: /client/
-      - Files: 
-    - Updated files: 
+- Files and folders created and updated for the client-side refactor: `Currently still in work!`
+    - New folder: /client/*
+      - Files: queries.js, mutations.js, SearchBooks.js, SavedBooks.js
+    - Updated files: /client/src/Apps.js
 
 ## Usage
 
