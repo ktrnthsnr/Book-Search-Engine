@@ -34,6 +34,15 @@ The task for this repo will be to refactor the code from one set of libraries to
 
 This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server.
 
+Steps completed for this project to refactor the code from a REST API to a GraphQL API:
+
+	1. Created Apollo Server and integrate with an Express.js server 
+	2. Updated existing authentication to integrate with the GraphQL API
+	3. Added an Apollo Provider and have requests sent to the Apollo server
+	4. Created GraphQL API endpoints
+	5. To validate, ran GraphQL queries and mutations within the localhost dev server in the GraphQL playgrounds, fetching and updating data within the backend
+	6. Deployed the MERN application as a Heroku app, with an mLab add-on resource
+
 ## Technology
 
 Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, GraphQL Playground, Apollo Server, Apollo-Client, graphql-tag, apollo-server-express, apollo-boost, React Router, react-router-dom, apollo/react-hooks, if-env, concurrently, jsonwebtoken, jwt-decode, faker, nodemon, bcrypt, moment, Heroku, mlab.
@@ -53,14 +62,15 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Otherwise, for custom individual component installations, install the npm packages per each server and client:
 
 ### Server-side installations
-- Original `server` dependencies before refactor to QueryQL and Apollo server
+- Original `server` dependencies before refactor to QueryQL and Apollo server, with added packages
 
     ```
     "dependencies": {
-        "bcrypt": "^4.0.1",
+        "apollo-server-express": "^2.16.1", -- installed for refactor
+        "bcrypt": "^4.0.1",        
         "express": "^4.17.1",
         "faker": "^4.1.0",
-        "jsonwebtoken": "^8.5.1",
+        "jsonwebtoken": "^8.5.1",   -- installed for refactor
         "moment": "^2.24.0", 
         "mongoose": "^5.9.9"
     },
@@ -70,7 +80,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 - Npm packages installed under the /server folder:
     - Under the /server folder, create a .gitignore file in the root and add `node_modules` to this file
-    - Install these npm packages
+    - Install these npm packages under the server folder:
     - $ `cd server`
     - brcrypt `npm install bcrypt`
     - express.js `npm i express`
@@ -78,9 +88,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - jsonwebtoken  `npm install jsonwebtoken`
     - moment `npm install moment`
     - mongoose `npm install mongoose`
-- Npm packages installed for the /server refactor include:
-    - Apollo Server library $ `npm i apollo-server-express`
+- Npm packages installed in the /server folder to setup for GraphQL, run the following:
+    - Install the Apollo Server library $ `npm i apollo-server-express`
     - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package $ `npm install jsonwebtoken`
+
+- Folders created for the refactor: /schemas
 
 ### Client-side installations
 - Original `client` dependencies before refactor to QueryQL and Apollo server
@@ -101,7 +113,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     ```
 - Npm packages installed under the /client folder:
      - Under the /client folder, create a .gitignore file in the root and add `node_modules` to this file
-     - Create the React App tool if cloned the repo, by running in the bash terminal
+     - Create the React App tool if cloned the repo, by first changing directory to the cient folder
         - $ `cd client`
         - $ `npx create-react-app .` 
         - (New installs without repo cloning, run $ `npx create-react-app client`)
