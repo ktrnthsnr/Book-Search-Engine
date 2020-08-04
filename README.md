@@ -92,7 +92,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - Install the Apollo Server library $ `npm i apollo-server-express`
     - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package $ `npm install jsonwebtoken`
 
-- Folders created for the refactor: /schemas
+- Files and folders created and updated for the server-side refactor: 
+    - New folder: /server/schemas
+      - Files: typeDefs.js, resolvers.js, indes.jx
+    - Updated files: /server/server.js, /server/utils/auth.js
+
 
 ### Client-side installations
 - Original `client` dependencies before refactor to QueryQL and Apollo server
@@ -138,6 +142,10 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - concurrently `concurrently`
     - nodemon `npm i nodemon`
 
+- Files and folders created and updated for the client-side refactor: 
+    - New folder: /client/
+      - Files: 
+    - Updated files: 
 
 ## Usage
 
@@ -170,9 +178,9 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 #### Server-side
 - To view the site locally on the development server, first install the npm packages
     - $ `npm i` or `npm install`
-- Then seed the data
+- Then seed the data (not required if gathing data from a third party API, such as Google API)
     - $ `npm run seed`
-- Start the MongoDB
+- Start the MongoDB (not required if gathing data from a third party API, such as Google API)
     - $ `mongod`
 - To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
     - $ `cd server`
@@ -200,7 +208,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 See Usage > server-side.
 
-The Chrome DevTools can validate API connections. Here a right click on the page opens DevTools showing the mobile-first single-page appication design and request\response to the GoogleAPI, as follows,
+The Chrome DevTools can validate API connections. Here a right click on the page opens DevTools showing the mobile-first single-page appication design and request\response to the GoogleAPI/books, as follows,
 
 ![Book Search googapi](./googleAPIreact.jpg "Book Search googapi")
 

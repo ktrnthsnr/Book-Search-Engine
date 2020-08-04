@@ -35,5 +35,5 @@ module.exports = {
     const payload = { username, email, _id };
         // -- removed
         //     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-        // }
+    }
 };
