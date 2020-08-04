@@ -117,11 +117,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     ```
 - Npm packages installed under the /client folder:
      - Under the /client folder, create a .gitignore file in the root and add `node_modules` to this file
-     - Create the React App tool if cloned the repo, by first changing directory to the cient folder
+     - Create the React App tool if cloned the repo, by first changing directory to the client folder
         - $ `cd client`
         - $ `npx create-react-app .` 
         - (New installs without repo cloning, run $ `npx create-react-app client`)
-    - Install these these npm packages as well
+    - Install additional dependent npm packages
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
     - bootstrap `npm i bootstrap`
     - popper  `npm i popper.js`
@@ -131,16 +131,17 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - react-dom `npm i react-dom`
     - react-router-dom `npm i react-router-dom`
     - react-scripts `npm i react-scripts`
-        - React Router `npm i react-router`
-        - nodemon `npm i nodemon`
-        - Apollo-Client `npm i apollo client`
-        - apollo/react-hooks `npm i @apollo/react-hooks`
-        - apollo-boost `npm i @pollo-boost`    
-        - if-env `npm i if-env`
-        - concurrently `concurrently`
-        - graphql-tag `npm i graphql-tag`
+- For the refactor to GraphQL and Apollo server, these packages were installed
+    - React Router `npm i react-router`
+    - nodemon `npm i nodemon`
+    - Apollo-Client `npm i apollo client`
+    - apollo/react-hooks `npm i @apollo/react-hooks`
+    - apollo-boost `npm i @pollo-boost`    
+    - if-env `npm i if-env`
+    - concurrently `concurrently`
+    - graphql-tag `npm i graphql-tag`
 
-- Files and folders created and updated for the client-side refactor: `Currently still in work!`
+- Files and folders created and updated for the client-side refactor: `Still in work!`
     - New folder: /client/*
       - Files: queries.js, mutations.js, SearchBooks.js, SavedBooks.js
     - Updated files: /client/src/Apps.js
