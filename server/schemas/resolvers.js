@@ -32,8 +32,8 @@ const resolvers = {
           return Book.find(params).sort({ createdAt: -1 });
         },
 
-        book: async (parent, { _id }) => {
-          return Book.findOne({ _id });
+        book: async (parent, { bookId }) => {
+          return Book.findOne({ bookId });
         }
     },
 
@@ -74,7 +74,7 @@ const resolvers = {
       
           await User.findByIdAndUpdate(
             { _id: context.user._id },
-            { $push: { books: book._id } },
+            { $push: { books: book.bookId } },
             { new: true }
           );
       
@@ -83,22 +83,6 @@ const resolvers = {
       
         throw new AuthenticationError('You need to be logged in!');
       },
-    
-
-    //   removeBook: async (parent, { bookId }, context) => {
-    //     if (context.user) {
-    //       const updatedBook = await Book.findOneAndUpdate(
-    //         { _id: bookId },
-    //         { $push: { books: { books } } },
-    //         { new: true, runValidators: true }
-    //       );
-      
-    //       return updatedBook;
-    //     }
-      
-    //     throw new AuthenticationError('Error removing a book!');
-    //   },
-    
 
   }
 };
