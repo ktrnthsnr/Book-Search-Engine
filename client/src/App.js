@@ -19,35 +19,56 @@ import Navbar from './components/Navbar';
     uri: 'http://localhost:3001/graphql'
   });
   
-  // new -- app function
-  function App() {
-    return (
-      <ApolloProvider client={client}>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
-            <Home />
-          </div>
-          <Footer />
-        </div>
+ // -- new
+ function App() {
+  return (
+    <ApolloProvider client={client}>
+    {/* <Router> */}
+    <Route exact path='/' component={Header} />
+      <>
+        <Navbar />
+        <Switch>        
+         <Route exact path='/' component={Home} />
+          <Route exact path='/' component={SearchBooks} />
+          <Route exact path='/saved' component={SavedBooks} />
+          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />          
+        </Switch>
+        <Route exact path='/' component={Footer} />
+      </>
       </ApolloProvider>
-    );
-  }
+    {/* </Router> */}
+  );
+}
 
-  // previous - removed
-    // function App() {
-    //   return (
-    //     <Router>
-    //       <>
-    //         <Navbar />
-    //         <Switch>
-    //           <Route exact path='/' component={SearchBooks} />
-    //           <Route exact path='/saved' component={SavedBooks} />
-    //           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-    //         </Switch>
-    //       </>
-    //     </Router>
-    //   );
-    // }
+  // -- apollo compare
+      // function App() {
+      //   return (
+      //     <ApolloProvider client={client}>
+      //       <div className="flex-column justify-flex-start min-100-vh">
+      //         <Header />
+      //         <div className="container">
+      //           <Home />
+      //         </div>
+      //         <Footer />
+      //       </div>
+      //     </ApolloProvider>
+      //   );
+      // }
+
+  // -- original
+      // function App() {
+      //   return (
+      //     <Router>
+      //       <>
+      //         <Navbar />
+      //         <Switch>
+      //           <Route exact path='/' component={SearchBooks} />
+      //           <Route exact path='/saved' component={SavedBooks} />
+      //           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+      //         </Switch>
+      //       </>
+      //     </Router>
+      //   );
+      // }
 
 export default App;
