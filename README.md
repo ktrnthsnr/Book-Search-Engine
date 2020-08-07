@@ -100,7 +100,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ### Client-side installations 
 
-` ***** Still in work! *****`
+ - `***** Still in work! *****`
 
 - Original `client` dependencies before refactor to QueryQL and Apollo server
 
@@ -151,8 +151,9 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - if-env `npm i if-env`
     - concurrently `npm i concurrently`
     - graphql-tag `npm i graphql-tag`
-    
-- Files and folders created and updated for the client-side refactor: 
+
+
+- Files and folders created and updated for the client-side refactor: ` ***** Still in work! *****`
     - New folder: /client/*
       - Files: queries.js, mutations.js, SearchBooks.js, SavedBooks.js
     - Updated files: /client/src/Apps.js
