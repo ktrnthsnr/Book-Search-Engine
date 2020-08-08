@@ -130,15 +130,13 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
         - $ `npx create-react-app .` 
         - (New installs without repo cloning, run $ `npx create-react-app client`)
 
-  - Install additional dependent npm packages
-	- apollo-boost `npm i apollo-boost graphql graphql-tag @apollo/react-hooks` 
-        - This installs these, so no need to install
-            - apollo-boost
-            - graphql-tag 
+ - Installed additional dependent npm packages
+    - apollo-boost `npm i apollo-boost graphql graphql-tag @apollo/react-hooks` 
+        - This installs the required packages for Apollo and GraphSQL in React on the client side:
+            - apollo-boost (for client)
+            - graphql-tag (formats GraphQL queries)
+            - @apollo/apollo-hooks (executes GraphQL queries as React Hooks)
             - graphql
-            - @apollo/apollo-hooks
-
-    - Apollo-Client `npm i apollo client` -- (todo: redo)
 
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
     - bootstrap `npm i bootstrap`
@@ -191,7 +189,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 #### Localhost deployment
 
-- If cloned to your localhost, after the installations, to start the Node.js application, run from the root in bash, which will start both the client and server side applications
+- If cloned to your localhost, after the installations, to start the Node.js application, run from the root in bash, which will start both the client and server side applications.  Currently the environment config is setup within the server/server.js and root package.json files.
 - $ `npm start`
 
 ### Local install, seed and usage 
