@@ -8,11 +8,11 @@ https://github.com/ktrnthsnr/Book-Search-Engine
 
 ## Heroku deployed website
 
-Before refactor as REST API
+- Before refactor as REST API
     https://ktrnthsnr-book-search-restapi.herokuapp.com/ 
 
 - `***** Still in work! *****`
-After refactor as GraphQL API 
+- After refactor as GraphQL API 
     https://ktrnthsnr-book-search-graphql.herokuapp.com/
 
 ## Table of Contents
