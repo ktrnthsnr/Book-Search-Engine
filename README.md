@@ -174,7 +174,6 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ## Usage
 
-
 ### Website
 - The website has been deployed to Heroku before and after the refactor exercise, before and after utilizing GraphQL\Apollo.
 
@@ -190,18 +189,17 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - One signed up and logged in, a user may save their book list
     ![Saved Books](./savedBooks.jpg "Saved Books")
 
-- The development server can be reached through 
-    - $ `cd client`
-    - $ `npm start`
-- The browser will open to your localhost React environment `http://localhost:3000`
-- Here is a search sample from the dev server, 
-	![Book Search Engine](./searchSample.jpg "Book Search Engine")
+#### Localhost deployment
 
+- If cloned to your localhost, after the installations, to start the Node.js application, run from the root in bash, which will start both the client and server side applications
+- $ `npm start`
 
 ### Local install, seed and usage 
 
+- Steps completed prior to the deployment:
+
 #### Server-side
-- To view the site locally on the development server, first install the npm packages
+- To view the site locally on the development server, first installed the npm packages
     - $ `npm i` or `npm install`
 - Then seed the data (not required if gathing data from a third party API, such as Google API. Instead connect to the Google Books API)
     - $ `npm run seed`
@@ -225,6 +223,9 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - $ `cd client`
     - $ `npm start`
 - The default browser will open the development server to your localhost, at `http://localhost:3000/`
+
+- Here is a search sample from the dev server, 
+	![Book Search Engine](./searchSample.jpg "Book Search Engine")
 
 - If npm start requires additional npm packages, the client side dependencies are located at /client/package.json. See installations for more info.
 
