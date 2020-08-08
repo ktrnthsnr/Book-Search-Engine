@@ -29,8 +29,7 @@ import Navbar from './components/Navbar';
  function App() {
   return (
     <ApolloProvider client={client}>
-    {/* <Router> */}
-    <Route exact path='/' component={Header} />
+      <Route exact path='/' component={Header} />
       <>
         <Navbar />
         <Switch>        
@@ -42,7 +41,6 @@ import Navbar from './components/Navbar';
         <Route exact path='/' component={Footer} />
       </>
       </ApolloProvider>
-    {/* </Router> */}
   );
 }
 

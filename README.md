@@ -53,6 +53,10 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Prereq: install to your desktop VSCode, Node.js, and MongoDB
 - After cloning the GitHub repo to your local drive, run the following in the VSCode command-line terminal
 - Install all components listed within the package.json file for npm
+- From the root run $ `npm i`
+
+- Check the package.json from each client and server folder have all dependencies installed. If there any missing, try installing from each of these directories.
+
     - Server 
     - $ `cd server`
     - $ `npm i`
@@ -158,6 +162,15 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - New folder: /client/*
       - Files: queries.js, mutations.js, SearchBooks.js, SavedBooks.js
     - Updated files: /client/src/Apps.js
+
+### Third server installations 
+
+- From the root, created a third application to control the client and server applications.
+- $ `npm init -y`
+- Also installed
+-  if-env library $ `npm install if-env`
+-  concurrently library as a dependency for development environment only `npm install -D concurrently`
+
 
 ## Usage
 
