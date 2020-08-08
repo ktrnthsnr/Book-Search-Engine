@@ -1,6 +1,6 @@
 import React from 'react';
 // -- new: React Router gives the single-page the multi-page feel
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // to do -- update react routs on these pages 
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
