@@ -5,7 +5,12 @@ import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
+// new -- new import queries
+import { QUERY_BOOKS } from '../utils/queries';
+import { QUERY_BOOK } from '../utils/queries';
+
 const SavedBooks = () => {
+  const { loading, data} = useQuery(QUERY_BOOKS);
   const [userData, setUserData] = useState({});
 
   // use this to determine if `useEffect()` hook needs to run again
