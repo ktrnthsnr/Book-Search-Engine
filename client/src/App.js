@@ -14,10 +14,16 @@ import Navbar from './components/Navbar';
   import { ApolloProvider } from '@apollo/react-hooks';
   import ApolloClient from 'apollo-boost';
 
-   // new -- establish connection to backend server's graphql's endpoint
-   const client = new ApolloClient({
-    uri: 'http://localhost:3001/graphql'
-  });
+// -- new: prod server
+    const client = new ApolloClient({
+      uri: '/graphql'
+    });
+
+// -- new: development server, establish connection to backend server's graphql's endpoint
+    // const client = new ApolloClient({
+    //   uri: 'http://localhost:3001/graphql'
+    // });
+
   
  // -- new
  function App() {
