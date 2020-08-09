@@ -11,7 +11,6 @@ https://github.com/ktrnthsnr/Book-Search-Engine
 - Before refactor as REST API
     https://ktrnthsnr-book-search-restapi.herokuapp.com/ 
 
-- `***** Still in work! *****`
 - After refactor as GraphQL API 
     https://ktrnthsnr-book-search-graphql.herokuapp.com/
 
@@ -31,7 +30,7 @@ The task for this repo will be to refactor the code from one set of libraries to
 
 - Original: The original application was built using the MERN stack, with a RESTful API, with a React front-end and MongoDB, Node.js/Express.js server and API.
 
-- New: The refactored application would have been converted to use GraphQL API built with an Apollo Server, with updated back-end server and auth middleware, and a new schemas directory to include typeDefs and resolvers. The front-end files added to convert to GraphQL will be the queries, mutations and App file and Search and Saved Books JavaScript files.
+- New: The refactored application would have been converted to use GraphQL API built with an Apollo Server, with updated back-end server and auth middleware, and a new schemas directory to include typeDefs and resolvers. The front-end files added to convert to GraphQL will be replacing the client API file config from the original to new Apoollo\QueryQL queries and mutations.
 
 This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server.
 
@@ -105,8 +104,6 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ### Client-side installations 
 
- - `***** Still in work! *****`
-
 - Original `client` dependencies before refactor to QueryQL and Apollo server
 
     ```
@@ -157,8 +154,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - concurrently `npm i concurrently`
     - graphql-tag `npm i graphql-tag`
 
-
-- Files and folders created and updated for the client-side refactor: ` ***** Still in work! *****`
+- Files and folders created and updated for the client-side refactor: ` 
     - New folder: /client/*
       - Files: queries.js, mutations.js, SearchBooks.js, SavedBooks.js
     - Updated files: /client/src/Apps.js
