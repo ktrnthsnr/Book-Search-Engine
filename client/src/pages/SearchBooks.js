@@ -21,9 +21,8 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-
   // new -- adding save book mutation hook
-  const [saveBook, { data }] = useMutation(SAVE_BOOK);
+  const [saveBook, { error }] = useMutation(SAVE_BOOK);
 
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
@@ -85,13 +84,13 @@ const SearchBooks = () => {
           // }
 
       // new -- Use the Apollo useMutation() Hook to execute the SAVE_BOOK mutation in the handleSaveBook() function instead of the saveBook() function imported from the API file.
-      const { data } = await saveBook (
-        {
-          variables: { 
-                        input: bookToSave
-                     }
-        }
-      );
+        const { data } = await saveBook (
+          {
+            variables: { 
+                          input: bookToSave
+                      }
+          }
+        );
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);

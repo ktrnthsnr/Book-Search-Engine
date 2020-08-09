@@ -1,14 +1,16 @@
 import React from 'react';
 // -- new: React Router gives the single-page the multi-page feel
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+  import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // to do -- update react routs on these pages 
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 // existing
 import Navbar from './components/Navbar';
+
 // new -- create the Apollo Provider, to import statements
-import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-boost';
+  import { ApolloProvider } from '@apollo/react-hooks';
+  import ApolloClient from 'apollo-boost';
+  import NoMatch from './pages/NoMatch';
 
 // -- testing
   // import Header from './components/Header';
@@ -26,7 +28,7 @@ import ApolloClient from 'apollo-boost';
     // });
 
   
- // -- new App function for adding React routes to these pages, adding Apollo Provider elements
+// -- new App function for adding React routes to these pages, adding Apollo Provider elements
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -36,7 +38,8 @@ function App() {
               <Switch>
                 <Route exact path='/' component={SearchBooks} />
                 <Route exact path='/saved' component={SavedBooks} />
-                <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+                {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
+                <Route component={NoMatch} />
               </Switch>
             </>
           </Router>
