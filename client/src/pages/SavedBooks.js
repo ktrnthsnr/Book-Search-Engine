@@ -23,13 +23,13 @@ const SavedBooks = () => {
   // new --  use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
     const { loading, error, data} = useQuery(GET_ME);
     // const [userData, setUserData] = useState({});
-    const [addHere, { data }] = useMutation(REMOVE_BOOK); // placeholder
+    const [removeBook, { data }] = useMutation(REMOVE_BOOK); // placeholder
 
 
 
 // new -- 
-const
-function 
+    // const
+    // function 
 
  // remove -- the useEffect() Hook that sets the state for UserData.
         // const userDataLength = Object.keys(userData).length;
@@ -55,8 +55,8 @@ function
         //     }
         //   };
 
-    getUserData();
-  }, [userDataLength]);
+  //   getUserData();
+  // }, [userDataLength]);
 
 
   // create function that accepts the book's mongo bookId value as param and deletes the book from the database
@@ -78,10 +78,12 @@ function
                       // setUserData(updatedUser);
 
      // new -- add removeBook mutation from utils/localStorage.js                  
-     const data = await removeBook (
-       {
-         variables: {bookId}
-       }
+     const { data } = await removeBook (
+          {
+              variables: { 
+                           id: bookId
+                         }
+            }
      );
 
      // upon success, remove book's id from localStorage -- keep
