@@ -38,10 +38,10 @@ This project is focused on full-stack web development using MERN stack tools, la
 Steps completed for this project to refactor the code from a REST API to a GraphQL API:
 
 	1. Created Apollo Server and integrate with an Express.js server 
-	2. Updated existing authentication to integrate with the GraphQL API
+	2. Updated existing authentication to integrate with the GraphQL API, updating the client front-end to allow for registration and login of a user using mutuations, and then added authentication
 	3. Added an Apollo Provider and have requests sent to the Apollo server
 	4. Created GraphQL API endpoints
-	5. To validate, ran GraphQL queries and mutations within the localhost dev server in the GraphQL playgrounds, fetching and updating data within the backend
+	5. To validate, ran GraphQL queries and mutations within the localhost dev server in the GraphQL playgrounds, fetching, displaying, and updating data within the backend
 	6. Deployed the MERN application as a Heroku app, with an mLab add-on resource
 
 ## Technology
