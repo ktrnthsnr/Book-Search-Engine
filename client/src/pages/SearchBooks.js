@@ -5,6 +5,8 @@ import Auth from '../utils/auth';
 
 // removed -- 
   // import { saveBook, searchGoogleBooks } from '../utils/API';
+
+import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 // new -- importing hooks to connect mutations from utils

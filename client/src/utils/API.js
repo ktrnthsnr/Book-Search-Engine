@@ -1,4 +1,15 @@
-// removed -- js page not used after refactor, replaced by Apollo queries and mutations
+// existing, no change ---------------------------------
+
+  // make a search to google books api
+  // https://www.googleapis.com/books/v1/volumes?q=harry+potter
+  export const searchGoogleBooks = (query) => {
+    return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+  };
+
+  
+
+// api routes have been removed -- ---------------------------------
+// js page not used after refactor, replaced by Apollo queries and mutations
 
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
@@ -52,8 +63,3 @@ export const deleteBook = (bookId, token) => {
   });
 };
 
-// make a search to google books api
-// https://www.googleapis.com/books/v1/volumes?q=harry+potter
-export const searchGoogleBooks = (query) => {
-  return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
-};
