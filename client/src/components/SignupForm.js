@@ -13,6 +13,10 @@ import { Form, Button, Alert } from 'react-bootstrap';
   // import { SAVE_BOOK } from '../utils/mutations';
 
 const SignupForm = () => {
+
+   // new -- adding save book mutation hook
+    const [addUser, { error }] = useMutation(ADD_USER);
+
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
@@ -28,23 +32,36 @@ const SignupForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    // // removed if statement --
+        // // check if form has everything (as per react-bootstrap docs)
+        // const form = event.currentTarget;
+        // if (form.checkValidity() === false) {
+        //   event.preventDefault();
+        //   event.stopPropagation();
+        // }
 
     try {
-      const response = await createUser(userFormData);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+      // new -- replace the addUser() functionality imported from the API file with the ADD_USER mutation functionality.
+      const { data } = await addUser (
+        {
+          variables: { 
+                      ...userFormData
+                    }
+        }
+      );
 
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
+      // removed --    previous syntax   
+          // const response = await createUser(userFormData);
+
+          // if (!response.ok) {
+          //   throw new Error('something went wrong!');
+          // }
+
+          // const { token, user } = await response.json();
+          // console.log(user);
+
+      Auth.login( data.login.token );
     } catch (err) {
       console.error(err);
       setShowAlert(true);

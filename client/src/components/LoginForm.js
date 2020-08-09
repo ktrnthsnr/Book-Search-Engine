@@ -12,9 +12,13 @@ import { Form, Button, Alert } from 'react-bootstrap';
     import { LOGIN_USER } from '../utils/mutations';
     // import { ADD_USER } from '../utils/mutations';
     // import { SAVE_BOOK } from '../utils/mutations';
-    const [loginUser] = useMutation(LOGIN_USER);
+    
 
 const LoginForm = () => {
+  
+  // new -- added login user mutation
+  const [loginUser, { error }] = useMutation(LOGIN_USER);
+
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -27,27 +31,41 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+
+    // removed if statement --
+        // // check if form has everything (as per react-bootstrap docs)
+        // const form = event.currentTarget;
+        // if (form.checkValidity() === false) {
+        //   event.preventDefault();
+        //   event.stopPropagation();
+        // }
 
     try {
-      const response = await loginUser(userFormData);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+            // new -- replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
+            const { data } = await saveBook (
+              {
+                variables: { 
+                            ...userFormData
+                          }
+              }
+            );
 
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
-    }
+
+    // removed --    previous syntax     
+          //   const response = await loginUser(userFormData);
+
+          //   if (!response.ok) {
+          //     throw new Error('something went wrong!');
+          //   }
+
+          //   const { token, user } = await response.json();
+          //   console.log(user);
+            Auth.login( data.login.token );
+          } catch (err) {
+            console.error(err);
+            setShowAlert(true);
+          }
 
     setUserFormData({
       username: '',
