@@ -1,5 +1,6 @@
 // remove --  the useEffect() Hook that sets the state for UserData.
-  // import React, { useState, useEffect } from 'react';   // new --  remove the useEffect hook 
+  // import React, { useState, useEffect } from 'react';   
+  import React, { useState } from 'react';   
 
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
@@ -25,7 +26,7 @@ const SavedBooks = () => {
    // new --  use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
     const { loading, data} = useQuery(GET_ME);
     // const [userData, setUserData] = useState({});
-    const [removeBook, { error }] = useMutation(REMOVE_BOOK); // placeholder
+    const [removeBook, { error }] = useMutation(REMOVE_BOOK); 
 
   // removed -- the useEffect() Hook that sets the state for UserData.
         // const userDataLength = Object.keys(userData).length;
@@ -55,12 +56,12 @@ const SavedBooks = () => {
   // }, [userDataLength]);
 
 // new -- get userData from schema resolver query
-    const [userData] = data?.me || [];
+    const userData =  data?.me || [];
 
 // create function that accepts the book's mongo bookId value as param and deletes the book from the database
 const handleDeleteBook = async (bookId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
+    
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
  
     if (!token) {
           return false;

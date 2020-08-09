@@ -34,23 +34,43 @@ export const ADD_USER = gql`
 // new -- add save book mutation, with title as the variable
 
 export const SAVE_BOOK = gql`
-  mutation saveBook($title: String!) {
-    saveBook(title: $title) {
-        book {
+  mutation saveBook($input:savedBook!) {
+    saveBook (input:$input)
+        {
+        _id
+        username
+        email
+        bookCount
+        savedBooks {
+            # _id
             bookId
             title
-      }
-    }
-  }
+            authors
+            description
+            image
+            link
+        }
+     }
+  }      
 `;
 
 // new -- remove book mutation, with bookId as the variable
 export const REMOVE_BOOK = gql`
   mutation removeBook($bookId: ID!) {
-    removeBook(id: $bookId) {
-        book {
-            bookId
-      }
-    }
-  }
-`;
+    removeBook(bookId: $bookId) {
+      _id
+            username
+            email
+            bookCount
+            savedBooks {
+                # _id
+                bookId
+                title
+                authors
+                description
+                image
+                link      
+                }
+              }
+           }
+    `;
