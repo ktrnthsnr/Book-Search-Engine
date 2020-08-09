@@ -1,3 +1,5 @@
+// removed -- js page not used after refactor, replaced by Apollo queries and mutations
+
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
   return fetch('/api/users/me', {

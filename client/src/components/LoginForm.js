@@ -2,14 +2,17 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-import { loginUser } from '../utils/API';
-import Auth from '../utils/auth';
+// removed -- replaced by Apollo LOGIN_USER mutation
+  // import { loginUser } from '../utils/API';
+
+  import Auth from '../utils/auth';
 
 // new -- importing hooks to connect mutations from utils
-import { useMutation } from '@apollo/react-hooks';
-import { LOGIN_USER } from '../utils/mutations';
-// import { ADD_USER } from '../utils/mutations';
-// import { SAVE_BOOK } from '../utils/mutations';
+    import { useMutation } from '@apollo/react-hooks';
+    import { LOGIN_USER } from '../utils/mutations';
+    // import { ADD_USER } from '../utils/mutations';
+    // import { SAVE_BOOK } from '../utils/mutations';
+    const [loginUser] = useMutation(LOGIN_USER);
 
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });

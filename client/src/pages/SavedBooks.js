@@ -3,19 +3,20 @@
 
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
-import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
+
+// removed -- 
+  // import { getMe, deleteBook } from '../utils/API';
 import { removeBookId } from '../utils/localStorage';
 
 // new -- new import queries from utils
-  // use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
-import { useQuery } from '@apollo/react-hooks';
-import { GET_ME } from '../utils/queries';
-
+    // use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
+  import { useQuery } from '@apollo/react-hooks';
+  import { GET_ME } from '../utils/queries';
 // new -- importing hooks to connect mutations from utils
-  //Use the useMutation() Hook to execute the REMOVE_BOOK mutation in the handleDeleteBook() function instead of the deleteBook() function imported f/API file.
-import { useMutation } from '@apollo/react-hooks';
-import { REMOVE_BOOK } from '../utils/mutations';
+    //Use the useMutation() Hook to execute the REMOVE_BOOK mutation in the handleDeleteBook() function instead of the deleteBook() function imported f/API file.
+  import { useMutation } from '@apollo/react-hooks';
+  import { REMOVE_BOOK } from '../utils/mutations';
 
 
 const SavedBooks = () => {
