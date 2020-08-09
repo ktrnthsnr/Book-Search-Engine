@@ -1,12 +1,12 @@
 import React from 'react';
 //import the apollo hooks
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_BOOKS } from '../utils/queries';
+import { GET_ME } from '../utils/queries';
 import BookList from '../components/BookList';
 
 const Home = () => {
   // use useQuery hook to make query request
-  const { loading, data } = useQuery(QUERY_BOOKS);
+  const { loading, data } = useQuery(GET_ME);
    // -- optional chaining syntax, if data exists store in the book constant, if not store in empty array
   const books = data?.books || []; 
   console.log(books);

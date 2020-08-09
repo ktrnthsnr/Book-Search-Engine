@@ -1,7 +1,7 @@
 // new -- utils is for non-React based code
 import gql from 'graphql-tag';
 
-export const QUERY_BOOKS = gql`
+export const GET_ME = gql`
   query books($username: String) {
     books(username: $username) {
       bookId
