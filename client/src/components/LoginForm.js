@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
+// new -- adding JSON Web Token (JWT) authentication from the utils auth.js
+import Auth from '../utils/auth';
+
 // removed -- replaced by Apollo LOGIN_USER mutation
   // import { loginUser } from '../utils/API';
 
-  import Auth from '../utils/auth';
 
 // new -- importing hooks to connect mutations from utils
     import { useMutation } from '@apollo/react-hooks';
@@ -17,7 +19,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 const LoginForm = () => {
   
   // new -- added login user mutation
-  const [loginUser, { error }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);    //---- check
 
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
@@ -28,6 +30,7 @@ const LoginForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
+  // submit the form, with async 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -43,12 +46,11 @@ const LoginForm = () => {
     try {
 
             // new -- replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
-            const { data } = await loginUser (
-              {
-                variables: { 
-                            ...userFormData
-                          }
-              }
+              // execute loginUser mutation and pass in variable data from the form state object as variables for the mutation function
+            const { data } = await login (
+                {
+                  variables: { ...userFormData  }
+                }
             );
 
 
@@ -61,11 +63,16 @@ const LoginForm = () => {
 
           //   const { token, user } = await response.json();
           //   console.log(user);
-            Auth.login( data.login.token );
-          } catch (err) {
-            console.error(err);
-            setShowAlert(true);
-          }
+
+    // new -- added for JSON web token (JWT)
+    Auth.login(data.login.token);
+
+      // console.log(data);
+
+      } catch (err) {
+        console.error(err);
+        setShowAlert(true);
+      }
 
     setUserFormData({
       username: '',

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-// removed --
-  // import { createUser } from '../utils/API';
 
+// new -- adding JSON Web Token (JWT) authentication from the utils auth.js 
+  // follow `addUser` in script to see where updates are added
   import Auth from '../utils/auth';
+
+// removed --
+    // import { createUser } from '../utils/API';
 
 // new -- importing hooks to connect mutations from utils
   import { useMutation } from '@apollo/react-hooks';
@@ -13,7 +16,6 @@ import { Form, Button, Alert } from 'react-bootstrap';
   // import { SAVE_BOOK } from '../utils/mutations';
 
 const SignupForm = () => {
-
    // new -- adding save book mutation hook
     const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -29,7 +31,8 @@ const SignupForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const handleFormSubmit = async (event) => {
+// submit the form, with async 
+const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     // // removed if statement --
@@ -43,11 +46,10 @@ const SignupForm = () => {
     try {
 
       // new -- replace the addUser() functionality imported from the API file with the ADD_USER mutation functionality.
+        // execute addUser mutation and pass in variable data from the form state object as variables for the mutation function
       const { data } = await addUser (
         {
-          variables: { 
-                      ...userFormData
-                    }
+          variables: { ...userFormData }
         }
       );
 
@@ -60,8 +62,11 @@ const SignupForm = () => {
 
           // const { token, user } = await response.json();
           // console.log(user);
+      
+      // new -- JSON Web Token (JWT) for addUser
+      Auth.login( data.addUser.token );
 
-      Auth.login( data.login.token );
+      // use try/catch instead of promises for error handing
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -72,9 +77,10 @@ const SignupForm = () => {
       email: '',
       password: '',
     });
+
   };
 
-  return (
+return (
     <>
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>

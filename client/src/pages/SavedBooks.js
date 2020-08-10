@@ -55,7 +55,7 @@ const SavedBooks = () => {
   //   getUserData();
   // }, [userDataLength]);
 
-// new -- get userData from schema resolver query
+// new -- get userData from schema resolver query, chaining syntax, if data exists, store in constant, if not store an empty array
     const userData =  data?.me || [];
 
 // create function that accepts the book's mongo bookId value as param and deletes the book from the database

@@ -94,7 +94,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - mongoose `npm install mongoose`
 - Npm packages installed in the /server folder to setup for GraphQL, run the following:
     - Install the Apollo Server library $ `npm i apollo-server-express`
-    - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package $ `npm install jsonwebtoken`
+    - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package $ `npm install jsonwebtoken` 
 
 - Files and folders created and updated for the server-side refactor: 
     - New folder: /server/schemas
@@ -133,9 +133,9 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
             - apollo-boost (for client)
             - graphql-tag (formats GraphQL queries)
             - @apollo/apollo-hooks (executes GraphQL queries as React Hooks)
-            - graphql        
-
+            - graphql       
     - react-router-dom `npm i react-router-dom`
+    - for JSON Token authentication within the client, installed jwt-decode `npm i jwt-decode`
 
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
     - bootstrap `npm i bootstrap`

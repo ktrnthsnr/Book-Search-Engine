@@ -33,7 +33,7 @@ const SearchBooks = () => {
     return () => saveBookIds(savedBookIds);
   });
 
-  // create method to search for books and set state on form submit
+  // create method to search for books and set state on form submit  // submit the form, with async 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -60,6 +60,7 @@ const SearchBooks = () => {
 
       setSearchedBooks(bookData);
       setSearchInput('');
+      // use try/catch instead of promises for error handing
     } catch (err) {
       console.error(err);
     }
@@ -86,6 +87,7 @@ const SearchBooks = () => {
           // }
 
       // new -- Use the Apollo useMutation() Hook to execute the SAVE_BOOK mutation in the handleSaveBook() function instead of the saveBook() function imported from the API file.
+        
         const { data } = await saveBook (
           {
             variables: { 
@@ -96,6 +98,7 @@ const SearchBooks = () => {
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      // use try/catch instead of promises for error handing
     } catch (err) {
       console.error(err);
     }
