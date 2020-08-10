@@ -1,26 +1,41 @@
+// existing
 import React from 'react';
-// -- new: React Router gives the single-page the multi-page feel
-  import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// to do -- update react routs on these pages 
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
-// existing
 import Navbar from './components/Navbar';
 
+// -- new: React Router gives the single-page the multi-page feel
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 // new -- create the Apollo Provider, to import statements
-  import { ApolloProvider } from '@apollo/react-hooks';
-  import ApolloClient from 'apollo-boost';
-  import NoMatch from './pages/NoMatch';
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+import NoMatch from './pages/NoMatch';
 
 // -- testing
   // import Header from './components/Header';
   // import Footer from './components/Footer';
   // import Home from './pages/Home';
 
+// new -- instruct Apollo instance to retrieve token every time a GraphQL request is make
+  const client = new ApolloClient({
+    request: operation => {
+      const token = localStorage.getItem('id_token');
+
+      operation.setContext({
+        headers: {
+          authorization: token ? `Bearer ${token}` : ''
+        }
+      });
+    },
+    uri: '/graphql'
+  });
+
+
 // -- new: prod server
-    const client = new ApolloClient({
-      uri: '/graphql'
-    });
+    // const client = new ApolloClient({
+    //   uri: '/graphql'
+    // });
 
 // -- new: development server, establish connection to backend server's graphql's endpoint
     // const client = new ApolloClient({

@@ -7,6 +7,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
+// new -- adding JSON Web Token (JWT) authentication from the utils auth.js
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
