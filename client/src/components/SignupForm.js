@@ -16,11 +16,13 @@ import { Form, Button, Alert } from 'react-bootstrap';
   // import { SAVE_BOOK } from '../utils/mutations';
 
 const SignupForm = () => {
-   // new -- adding save book mutation hook
-    const [addUser, { error }] = useMutation(ADD_USER);
-
+ 
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+
+  // new -- adding save book mutation hook
+  const [addUser, { error }] = useMutation(ADD_USER);
+
   // set state for form validation
   const [validated] = useState(false);
   // set state for alert
@@ -47,11 +49,9 @@ const handleFormSubmit = async (event) => {
 
       // new -- replace the addUser() functionality imported from the API file with the ADD_USER mutation functionality.
         // execute addUser mutation and pass in variable data from the form state object as variables for the mutation function
-      const { data } = await addUser (
-        {
+      const { data } = await addUser ({ 
           variables: { ...userFormData }
-        }
-      );
+        });
 
       // removed --    previous syntax   
           // const response = await createUser(userFormData);
@@ -67,16 +67,16 @@ const handleFormSubmit = async (event) => {
       Auth.login( data.addUser.token );
 
       // use try/catch instead of promises for error handing
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
+    } catch (e) {
+      console.error(e);
+      // setShowAlert(true);
     }
 
-    setUserFormData({
-      username: '',
-      email: '',
-      password: '',
-    });
+    // setUserFormData({
+    //   username: '',
+    //   email: '',
+    //   password: '',
+    // });
 
   };
 

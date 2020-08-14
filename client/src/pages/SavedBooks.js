@@ -4,7 +4,9 @@
 
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
+// new -- importing authentiation for JSON web token (JWT)
 import Auth from '../utils/auth';
+// import { Redirect, useParams } from 'react-router-dom'; 
 
 // removed -- 
   // import { getMe, deleteBook } from '../utils/API';
@@ -57,6 +59,7 @@ const SavedBooks = () => {
 
 // new -- get userData from schema resolver query, chaining syntax, if data exists, store in constant, if not store an empty array
     const userData =  data?.me || [];
+    // const user = data?.me || data?.user || {};
 
 // create function that accepts the book's mongo bookId value as param and deletes the book from the database
 const handleDeleteBook = async (bookId) => {
