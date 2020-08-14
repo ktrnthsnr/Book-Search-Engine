@@ -17,11 +17,10 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 const SignupForm = () => {
  
-  // set initial form state
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
-
   // new -- adding save book mutation hook
   const [addUser, { error }] = useMutation(ADD_USER);
+  // set initial form state
+  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
 
   // set state for form validation
   const [validated] = useState(false);
@@ -37,13 +36,13 @@ const SignupForm = () => {
 const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // // removed if statement --
-        // // check if form has everything (as per react-bootstrap docs)
-        // const form = event.currentTarget;
-        // if (form.checkValidity() === false) {
-        //   event.preventDefault();
-        //   event.stopPropagation();
-        // }
+    // // removed if statement -- ??
+        // check if form has everything (as per react-bootstrap docs)
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
 
     try {
 
@@ -67,16 +66,16 @@ const handleFormSubmit = async (event) => {
       Auth.login( data.addUser.token );
 
       // use try/catch instead of promises for error handing
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
       // setShowAlert(true);
     }
 
-    // setUserFormData({
-    //   username: '',
-    //   email: '',
-    //   password: '',
-    // });
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
 
   };
 

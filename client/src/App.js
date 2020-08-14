@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // new -- create the Apollo Provider, to import statements
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-import NoMatch from './pages/NoMatch';
+// import NoMatch from './pages/NoMatch';
 
 // -- testing
   // import Header from './components/Header';
@@ -28,7 +28,7 @@ import NoMatch from './pages/NoMatch';
         }
       });
     },
-    uri: '/graphql'
+    uri: 'graphql' // updated
   });
 
 
@@ -53,8 +53,8 @@ function App() {
               <Switch>
                 <Route exact path='/' component={SearchBooks} />
                 <Route exact path='/saved' component={SavedBooks} />
-                {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
-                <Route component={NoMatch} />
+                <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+                {/* <Route component={NoMatch} /> */}
               </Switch>
             </>
           </Router>

@@ -150,9 +150,12 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - React Router `npm i react-router`
     - nodemon `npm i nodemon`
     - apollo/react-hooks `npm i @apollo/react-hooks`
+    - graphql-tag `npm i graphql-tag`
+
+- Install at the root
     - if-env `npm i if-env`
     - concurrently `npm i concurrently`
-    - graphql-tag `npm i graphql-tag`
+
 
 - Files and folders created and updated for the client-side refactor: ` 
     - New folder: /client/*

@@ -7,17 +7,12 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    users: [User]
-    user(username: String!): User
-    books(username: String): [Book]
-    book(bookId: ID!): Book
   }
 
   type User {
     _id: ID
     username: String
     email: String
-    password: String
     bookCount: Int
     savedBooks: [Book]
   }
@@ -36,7 +31,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveBook(input: savedBook!): User
-    removeBook(bookId: ID!): User
+    removeBook(bookId: String!): User
   }
 
   type Auth {
@@ -54,6 +49,61 @@ const typeDefs = gql`
 }
 
 `;
+
+// previous
+    // // User, Book, Query, Mutation, Auth queries
+    // const typeDefs = gql`
+
+    //   type Query {
+    //     me: User
+    //     users: [User]
+    //     user(username: String!): User
+    //     books(username: String): [Book]
+    //     book(bookId: ID!): Book
+    //   }
+
+    //   type User {
+    //     _id: ID
+    //     username: String
+    //     email: String
+    //     password: String
+    //     bookCount: Int
+    //     savedBooks: [Book]
+    //   }
+
+    //   type Book {
+    //     bookId: ID
+    //     authors:[String]
+    //     description: String
+    //     title: String
+    //     image: String
+    //     link: String
+    //   }
+
+    
+    //   type Mutation {    
+    //     login(email: String!, password: String!): Auth
+    //     addUser(username: String!, email: String!, password: String!): Auth
+    //     saveBook(input: savedBook!): User
+    //     removeBook(bookId: ID!): User
+    //   }
+
+    //   type Auth {
+    //     token: ID!
+    //     user: User
+    //   }
+
+    //   input savedBook {
+    //     bookId: String
+    //     title: String
+    //     authors: [String]
+    //     description: String
+    //     image: String
+    //     link: String
+    // }
+
+    // `;
+
 
 
 
